@@ -4,4 +4,4 @@ PHPの管理画面サンプル
 
 ## ライブラリ
 
-FuelPHP v1.8 (http://fuelphp.com/)[http://fuelphp.com/]
+FuelPHP v1.8 [http://fuelphp.com/](http://fuelphp.com/)
