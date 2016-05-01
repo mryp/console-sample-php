@@ -15,6 +15,7 @@ class Controller_Console extends Controller_Template
 	public function action_index()
 	{
 		$this->template->content = View::forge('console/index');
-		$this->template->content->set('title', 'index');
+		$this->template->set('title', 'テンプレートタイトル');
+		$this->template->content->set('title', 'コンテンツタイトル');
 	}
 }
