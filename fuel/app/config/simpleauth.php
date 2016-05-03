@@ -91,9 +91,9 @@ return array(
 		 * 50   => array('name' => 'Moderators', 'roles' => array('user', 'moderator')),
 		 * 100  => array('name' => 'Administrators', 'roles' => array('user', 'moderator', 'admin')),
 		 */
-		 1    => array('name' => 'Users', 'roles' => array('user')),
-		 50   => array('name' => 'Moderators', 'roles' => array('user', 'moderator')),
-		 100  => array('name' => 'Administrators', 'roles' => array('user', 'moderator', 'admin')),
+		 1  => array('name' => 'ユーザー', 'roles' => array('user')),
+		 2  => array('name' => '運用者', 'roles' => array('user', 'moderator')),
+		 3  => array('name' => '管理者', 'roles' => array('user', 'moderator', 'admin')),
 	),
 
 	/**
@@ -118,6 +118,15 @@ return array(
 		 * Global allow by assigning true to a role (use with care!):
 		 *   'super' => true,
 		 */
+		'user' => array(
+            'access' => array('level1')	//閲覧のみ
+        ),
+		'moderator' => array(
+            'access' => array('level2')	//閲覧・設定可能
+        ),
+		'admin' => array(
+            'access' => array('level3')	//閲覧・設定・削除可能
+        ),
 	),
 
 	/**
