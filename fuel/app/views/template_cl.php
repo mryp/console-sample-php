@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">○○管理ページ</a>
+                <a class="navbar-brand" href="<?php echo Uri::base(); ?>console/index">○○○コンソール</a>
             </div><!-- /.navbar-header -->
 
             <!-- ユーザー設定メニュー -->
@@ -49,9 +49,9 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> ユーザー設定</a></li>
+                        <li><a href="<?php echo Uri::base(); ?>console/profile"><i class="fa fa-gear fa-fw"></i> ユーザー設定</a></li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> ログアウト</a></li>
+                        <li><a href="<?php echo Uri::base(); ?>console/logout"><i class="fa fa-sign-out fa-fw"></i> ログアウト</a></li>
                     </ul>
                 </li>
             </ul><!-- /.navbar-top-links -->
@@ -61,17 +61,17 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index"><i class="fa fa-dashboard fa-fw"></i> ダッシュボード</a>
+                            <a href="<?php echo Uri::base(); ?>console/index"><i class="fa fa-dashboard fa-fw"></i> ダッシュボード</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="<?php echo Uri::base(); ?>console/table"><i class="fa fa-table fa-fw"></i> 集計</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cog fa-fw"></i> 設定<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="flot.html">Flot Charts</a></li>
-                                <li><a href="morris.html">Morris.js Charts</a></li>
+                                <li><a href="<?php echo Uri::base(); ?>console/optionuser">ユーザー管理</a></li>
+                                <li><a href="<?php echo Uri::base(); ?>console/optiongen">全般設定</a></li>
                             </ul><!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                     </ul>
                 </div>

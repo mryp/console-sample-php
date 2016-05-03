@@ -1,7 +1,7 @@
-DBì¬F
+DBä½œæˆï¼š
 create database fuelsample default character set utf8;
 
-ƒe[ƒuƒ‹ì¬F
+ãƒ†ãƒ¼ãƒ–ãƒ«ä½œæˆï¼š
 create table `users` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
     `username` VARCHAR( 50 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
@@ -20,7 +20,7 @@ create table `users` (
 );
 
 
-Å‰‚Ìƒ†[ƒU[“o˜^F
+æœ€åˆã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ç™»éŒ²ï¼š
 php oil console
->> Auth::create_user('admin', 'ƒpƒXƒ[ƒh', 'admin@poringsoft.net', 100);
+>> Auth::create_user('admin', 'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰', 'admin@poringsoft.net', 100);
 
