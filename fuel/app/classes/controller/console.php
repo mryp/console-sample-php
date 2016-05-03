@@ -112,4 +112,31 @@ class Controller_Console extends Controller_Template
 		$this->template->set('title', '集計');
 		$this->template->content->set('title', '集計');
 	}
+	
+	/**
+	 * ユーザー管理
+	 */
+	public function action_optionuser()
+	{
+		if (Input::post())
+		{
+			$deleteIdList = Input::post("delete");
+			if (count($deleteIdList) > 0)
+			{
+				foreach (array_keys($deleteIdList) as $id)
+				{
+					$user = Model_Users::find_one_by('id', $id);
+					if ($user != null)
+					{
+						Auth::delete_user($user['username']);
+						break;
+					}
+				}
+			}
+		}
+		
+		$this->template->content = View::forge('console/optionuser');
+		$this->template->set('title', 'ユーザー管理');
+		$this->template->content->set('title', 'ユーザー管理');
+	}
 }
