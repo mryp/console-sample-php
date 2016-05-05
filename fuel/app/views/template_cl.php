@@ -36,8 +36,6 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">トグルメニュー</span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?php echo Uri::base(); ?>console/index">○○○コンソール</a>
             </div><!-- /.navbar-header -->
@@ -69,7 +67,8 @@
                         <li>
                             <a href="#"><i class="fa fa-cog fa-fw"></i> 設定<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="<?php echo Uri::base(); ?>console/optionuser">ユーザー管理</a></li>
+                                <li><a href="<?php echo Uri::base(); ?>console/optionuser">ユーザー一覧</a></li>
+                                <li><a href="<?php echo Uri::base(); ?>console/optionadduser">ユーザー追加</a></li>
                                 <li><a href="<?php echo Uri::base(); ?>console/optiongen">全般設定</a></li>
                             </ul><!-- /.nav-second-level -->
                         </li>

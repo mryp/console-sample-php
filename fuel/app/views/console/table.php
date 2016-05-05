@@ -18,10 +18,8 @@
                 </div><!-- /.panel-body -->
             </div><!-- /.panel -->
         </div><!-- /.col-lg-12 -->
-    </div><!-- /.row -->
     
-    <?php if (Auth::has_access('access.level2')) { ?>
-    <div class="row">
+        <?php if (Auth::has_access('access.level2')) { ?>
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -34,11 +32,9 @@
                 </div><!-- /.panel-body -->
             </div><!-- /.panel -->
         </div><!-- /.col-lg-12 -->
-    </div><!-- /.row -->
-    <?php } ?>
+        <?php } ?>
     
-    <?php if (Auth::has_access('access.level3')) { ?>
-    <div class="row">
+        <?php if (Auth::has_access('access.level3')) { ?>
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -51,7 +47,7 @@
                 </div><!-- /.panel-body -->
             </div><!-- /.panel -->
         </div><!-- /.col-lg-12 -->
+        <?php } ?>
     </div><!-- /.row -->
-    <?php } ?>
 
 </div><!-- /#page-wrapper -->

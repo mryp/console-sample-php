@@ -77,7 +77,7 @@ class Controller_Console extends Controller_Template
 					array('email' => $data['email'])
 				))
 				{
-				$data['success_message'] = "更新処理が正常に完了しました";
+					$data['success_message'] = "更新処理が正常に完了しました";
 				}
 			}
 		}
@@ -114,7 +114,7 @@ class Controller_Console extends Controller_Template
 	}
 	
 	/**
-	 * ユーザー管理
+	 * ユーザー一覧
 	 */
 	public function action_optionuser()
 	{
@@ -136,7 +136,36 @@ class Controller_Console extends Controller_Template
 		}
 		
 		$this->template->content = View::forge('console/optionuser');
-		$this->template->set('title', 'ユーザー管理');
-		$this->template->content->set('title', 'ユーザー管理');
+		$this->template->set('title', 'ユーザー一覧');
+		$this->template->content->set('title', 'ユーザー一覧');
+	}
+	
+	/**
+	 * ユーザー追加
+	 */
+	public function action_optionadduser()
+	{
+		$data = array();
+		$username = Input::post("username", '');
+		if (Input::post())
+		{
+			$data['username'] = Input::post("username", '');
+			$data['email'] = Input::post("username", '');
+			$data['groupid'] = Input::post("groupid", '');
+			$data['password'] = Input::post("password", '');
+			$data['passwordcnf'] = Input::post("passwordcnf", '');
+		}
+		else
+		{
+			$data['username'] = Input::post("username", '');
+			$data['email'] = Input::post("username", '');
+			$data['groupid'] = Input::post("groupid", '');
+			$data['password'] = Input::post("password", '');
+			$data['passwordcnf'] = Input::post("passwordcnf", '');
+		}
+		
+		$this->template->content = View::forge('console/optionadduser', $data);
+		$this->template->set('title', 'ユーザー追加');
+		$this->template->content->set('title', 'ユーザー追加');
 	}
 }
