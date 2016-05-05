@@ -30,15 +30,18 @@
                                 
                                 
                                 echo Form::open(array('role' => 'form'));
-                                echo '<div class="form-group"><label>ユーザー名</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('ユーザー名');
                                 echo '<p class="form-control-static">'.$username.'</p>';
                                 echo '</div>';
                                 
-                                echo '<div class="form-group"><label>メールアドレス</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('メールアドレス');
                                 echo Form::input('email', $email, array('class' => 'form-control', 'placeholder' => 'メールアドレス'));
                                 echo '</div>';
                                 
-                                echo '<div class="form-group"><label>権限グループ</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('権限グループ');
                                 echo '<p class="form-control-static">'.$groupname.'</p>';
                                 echo '</div>';
                                                                 

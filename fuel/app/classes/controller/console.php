@@ -154,6 +154,8 @@ class Controller_Console extends Controller_Template
 			$data['groupid'] = Input::post("groupid", '');
 			$data['password'] = Input::post("password", '');
 			$data['passwordcnf'] = Input::post("passwordcnf", '');
+			
+			
 		}
 		else
 		{

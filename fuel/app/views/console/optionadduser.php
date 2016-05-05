@@ -30,23 +30,28 @@
                                 }
                                 
                                 echo Form::open(array('role' => 'form'));
-                                echo '<div class="form-group"><label>ユーザー名</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('ユーザー名');
                                 echo Form::input('username', $username, array('class' => 'form-control', 'placeholder' => 'ユーザー名'));
                                 echo '</div>';
                                 
-                                echo '<div class="form-group"><label>メールアドレス</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('メールアドレス');
                                 echo Form::input('email', $email, array('class' => 'form-control', 'placeholder' => 'メールアドレス'));
                                 echo '</div>';
                                 
-                                echo '<div class="form-group"><label>権限グループ</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('権限グループ');
                                 echo Form::select('group', $groupid, Config::get('simpleauth.groups'), array('class' => 'form-control'));
                                 echo '</div>';
                                 
-                                echo '<div class="form-group"><label>パスワード</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('パスワード');
                                 echo Form::password('passwrod', "", array('class' => 'form-control', 'placeholder' => 'パスワード'));
                                 echo '</div>';
                                 
-                                echo '<div class="form-group"><label>パスワード（確認用）</label>';
+                                echo '<div class="form-group">';
+                                echo Form::label('パスワード（確認用）');
                                 echo Form::password('passwordcnf', "", array('class' => 'form-control', 'placeholder' => 'パスワード'));
                                 echo '</div>';
                                 
