@@ -157,7 +157,7 @@ class Controller_Console extends Controller_Template
 			$val->add('username', 'ユーザー名')
 				->add_rule('required')
 				->add_rule('min_length', 3)
-				->add_rule('valid_string', array('alpha', 'dashes', 'numeric'));
+				->add_rule('valid_string', array('alpha', 'numeric'));
 			$val->add('email', 'メールアドレス')
 				->add_rule('required')
 				->add_rule('valid_email');
@@ -199,7 +199,6 @@ class Controller_Console extends Controller_Template
 					{
 						$data['error_message'] = "ユーザーの追加に失敗しました<br />" . $e->getMessage();
 					}
-					
 				}
 				else 
 				{
@@ -211,6 +210,58 @@ class Controller_Console extends Controller_Template
 		$this->template->content = View::forge('console/optionadduser', $data);
 		$this->template->set('title', 'ユーザー追加');
 		$this->template->content->set('title', 'ユーザー追加');
+		if (isset($data['error_message']))
+		{		
+			$this->template->content->set_safe('error_message', $data['error_message']);
+		}
+	}
+	
+	/**
+	 * ユーザー一括追加
+	 */ 
+	public function action_optioncsvuser()
+	{
+		$data = array();
+		if (Input::post())
+		{ 
+			Upload::process(array(
+				'path' => APPPATH . 'tmp/csvuser',
+   				'randomize' => true,
+    			'ext_whitelist' => array('csv', 'txt'),
+			));
+			
+			if (Upload::is_valid())
+			{
+				Upload::save();
+				$file = Upload::get_files(0);
+		
+				if (isset($file['error']) && $file['error'] == false)
+				{
+					$filePath = $file['saved_to'] . $file['saved_as'];
+					$count = Model_Users::createUserFromCsvFile($filePath);
+					if ($count > 0)
+					{
+						$data['success_message'] = $count . " 件のデータを登録しました";
+					}
+					else
+					{
+						$data['error_message'] = "登録可能なデータが見つかりませんでした。<br />書式が間違っているか、すべて登録済みの可能性があります。";
+					}
+				}
+				else
+				{
+					$data['error_message'] = "ファイルの保存に失敗しました";
+				}
+			}
+			else
+			{
+				$data['error_message'] = "ファイルのアップロードに失敗しました";
+			}
+		}
+		
+		$this->template->content = View::forge('console/optioncsvuser', $data);
+		$this->template->set('title', 'ユーザー一括追加');
+		$this->template->content->set('title', 'ユーザー一括追加');
 		if (isset($data['error_message']))
 		{		
 			$this->template->content->set_safe('error_message', $data['error_message']);
