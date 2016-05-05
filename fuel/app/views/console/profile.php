@@ -27,22 +27,24 @@
                                     echo $error_message;
                                     echo '</div>';   
                                 }
+                                
+                                
+                                echo Form::open(array('role' => 'form'));
+                                echo '<div class="form-group"><label>ユーザー名</label>';
+                                echo '<p class="form-control-static">'.$username.'</p>';
+                                echo '</div>';
+                                
+                                echo '<div class="form-group"><label>メールアドレス</label>';
+                                echo Form::input('email', $email, array('class' => 'form-control', 'placeholder' => 'メールアドレス'));
+                                echo '</div>';
+                                
+                                echo '<div class="form-group"><label>権限グループ</label>';
+                                echo '<p class="form-control-static">'.$groupname.'</p>';
+                                echo '</div>';
+                                                                
+                                echo Form::submit('passwordcnf', "更新する", array('class' => 'btn btn-default'));
+                                echo Form::close();
                             ?>
-                            <form role="form" method="post">
-                                <div class="form-group">
-                                    <label>ユーザー名</label>
-                                    <p class="form-control-static"><?php echo $username; ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label>メールアドレス</label>
-                                    <input name="email" value="<?php echo $email; ?>" type="text" class="form-control" placeholder="メールアドレス">
-                                </div>
-                                <div class="form-group">
-                                    <label>グループ</label>
-                                    <p class="form-control-static"><?php echo $groupname; ?></p>
-                                </div>
-                                <button type="submit" class="btn btn-default">設定を更新する</button>
-                            </form>
                         </div><!-- /.col-lg-6 (nested) -->
                     </div><!-- /.row (nested) -->
                 </div><!-- /.panel-body -->
