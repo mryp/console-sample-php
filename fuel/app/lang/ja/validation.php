@@ -14,7 +14,7 @@ return array(
     'valid_ip'        => ':label は 有効なIPアドレスではありません。',
     'numeric_min'     => ':label には :param:1 より大きい数値を入力して下さい。',
     'numeric_max'     => ':label には :param:1 より小さい数値を入力して下さい。',
-    'valid_string'    => ':label は :param:2 で入力してください。',
+    'valid_string'    => ':label は :rule(:param:1) で入力してください。',
 	'numeric_between' => ':label は :param:1 から :param:2 の範囲の数値を入力してください。',
 	'required_with'   => ':label は :param:1 が入力さている場合は必須入力です。',
 	'valid_date'      => ':label は日付を入力してください。',
