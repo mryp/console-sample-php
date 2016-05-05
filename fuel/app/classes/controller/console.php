@@ -146,28 +146,74 @@ class Controller_Console extends Controller_Template
 	public function action_optionadduser()
 	{
 		$data = array();
-		$username = Input::post("username", '');
+		$data['username'] = Input::post("username", '');
+		$data['email'] = Input::post("email", '');
+		$data['groupid'] = Input::post("groupid", '');
+		$data['password'] = Input::post("password", '');
+		$data['passwordcnf'] = Input::post("passwordcnf", '');
 		if (Input::post())
 		{
-			$data['username'] = Input::post("username", '');
-			$data['email'] = Input::post("username", '');
-			$data['groupid'] = Input::post("groupid", '');
-			$data['password'] = Input::post("password", '');
-			$data['passwordcnf'] = Input::post("passwordcnf", '');
+			$val = Validation::forge();
+			$val->add('username', 'ユーザー名')
+				->add_rule('required')
+				->add_rule('min_length', 3)
+				->add_rule('valid_string', array('alpha', 'dashes', 'numeric'));
+			$val->add('email', 'メールアドレス')
+				->add_rule('required')
+				->add_rule('valid_email');
+			$val->add('groupid', '権限グループ')
+				->add_rule('required');
+			$val->add('password', 'パスワード')
+				->add_rule('required')
+				->add_rule('min_length', 6)
+				->add_rule('max_length', 20);				
 			
-			
-		}
-		else
-		{
-			$data['username'] = Input::post("username", '');
-			$data['email'] = Input::post("username", '');
-			$data['groupid'] = Input::post("groupid", '');
-			$data['password'] = Input::post("password", '');
-			$data['passwordcnf'] = Input::post("passwordcnf", '');
+			if ($data['password'] != $data['passwordcnf'])
+			{
+				$data['error_message'] = "パスワードと確認用パスワードが一致しません";
+			}
+			else
+			{
+				if ($val->run())
+				{
+					try
+					{
+						if (Auth::create_user($val->validated('username')
+						, $val->validated('password')
+						, $val->validated('email')
+						, $val->validated('groupid')))
+						{
+							$data['username'] = '';
+							$data['email'] = '';
+							$data['groupid'] = '';
+							$data['password'] = '';
+							$data['passwordcnf'] = '';
+							$data['success_message'] = $val->validated('username') . "を追加しました";
+						}
+						else
+						{
+							$data['error_message'] = "ユーザーの追加に失敗しました";
+						}
+					}
+					catch (Exception $e) 
+					{
+						$data['error_message'] = "ユーザーの追加に失敗しました<br />" . $e->getMessage();
+					}
+					
+				}
+				else 
+				{
+					$data['error_message'] = $val->show_errors();
+				}
+			}
 		}
 		
 		$this->template->content = View::forge('console/optionadduser', $data);
 		$this->template->set('title', 'ユーザー追加');
 		$this->template->content->set('title', 'ユーザー追加');
+		if (isset($data['error_message']))
+		{		
+			$this->template->content->set_safe('error_message', $data['error_message']);
+		}
 	}
 }

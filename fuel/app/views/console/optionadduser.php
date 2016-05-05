@@ -42,12 +42,17 @@
                                 
                                 echo '<div class="form-group">';
                                 echo Form::label('権限グループ');
-                                echo Form::select('group', $groupid, Config::get('simpleauth.groups'), array('class' => 'form-control'));
+                                $groupList = array();
+                                foreach (Config::get('simpleauth.groups') as $id => $group)
+                                {
+                                    $groupList[$id] = $group['name'];
+                                }
+                                echo Form::select('groupid', $groupid, $groupList, array('class' => 'form-control'));
                                 echo '</div>';
                                 
                                 echo '<div class="form-group">';
                                 echo Form::label('パスワード');
-                                echo Form::password('passwrod', "", array('class' => 'form-control', 'placeholder' => 'パスワード'));
+                                echo Form::password('password', "", array('class' => 'form-control', 'placeholder' => 'パスワード'));
                                 echo '</div>';
                                 
                                 echo '<div class="form-group">';
@@ -55,7 +60,7 @@
                                 echo Form::password('passwordcnf', "", array('class' => 'form-control', 'placeholder' => 'パスワード'));
                                 echo '</div>';
                                 
-                                echo Form::submit('passwordcnf', "追加する", array('class' => 'btn btn-default'));
+                                echo Form::submit('submit', "追加する", array('class' => 'btn btn-default'));
                                 echo Form::close();
                             ?>
                         </div><!-- /.col-lg-6 (nested) -->
