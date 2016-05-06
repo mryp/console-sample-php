@@ -74,6 +74,7 @@
                                 <li><a href="<?php echo Uri::base(); ?>console/optionsite">サイト設定</a></li>
                             </ul><!-- /.nav-second-level -->
                         </li>
+                        <?php if (Auth::has_access('access.level3')) { ?>
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> ユーザー設定<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -82,11 +83,10 @@
                                 <li><a href="<?php echo Uri::base(); ?>console/optioncsvuser">ユーザー一括追加</a></li>
                             </ul><!-- /.nav-second-level -->
                         </li>
+                        <?php } ?>
                     </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
+                </div><!-- /.sidebar-collapse -->
+            </div><!-- /.navbar-static-side -->
         </nav>
 
         <!-- Page Content -->
