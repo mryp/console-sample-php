@@ -22,6 +22,7 @@
                                         <th>ユーザー名</th>
                                         <th>メールアドレス</th>
                                         <th>グループ</th>
+                                        <th>最終ログイン</th>
                                         <th>操作</th>
                                     </tr>
                                 </thead>
@@ -36,6 +37,7 @@
                                         echo '<td>'.$user['username'].'</td>';
                                         echo '<td>'.$user['email'].'</td>';
                                         echo '<td>'.$groupName.'</td>';
+                                        echo '<td>'.date('Y/m/d H:i:s', $user['last_login']).'</td>';                                        
                                         if ($user['username'] == Auth::get('username'))
                                         {
                                             //自分自身は削除できないようにする
