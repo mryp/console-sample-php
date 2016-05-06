@@ -7,7 +7,7 @@
     
     <?php if (Auth::has_access('access.level3')) { ?>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     ユーザー一覧
@@ -54,7 +54,7 @@
                     </div><!-- /.table-responsive -->
                 </div><!-- /.panel-body -->
             </div><!-- /.panel -->
-        </div><!-- /.col-lg-6 -->
+        </div><!-- /.col-lg-12 -->
     </div><!-- /.row -->
     <?php } ?>
 

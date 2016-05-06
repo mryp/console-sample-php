@@ -7,14 +7,14 @@
     
     <?php if (Auth::has_access('access.level3')) { ?>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     CSVファイルアップロード
                 </div><!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <?php 
                                 if (isset($success_message))
                                 {
@@ -46,11 +46,11 @@
                                 echo Form::submit('submit', "登録する", array('class' => 'btn btn-default'));
                                 echo Form::close();
                             ?>
-                        </div><!-- /.col-lg-6 (nested) -->
+                        </div><!-- /.col-lg-12 (nested) -->
                     </div><!-- /.row (nested) -->
                 </div><!-- /.panel-body -->
             </div><!-- /.panel -->
-        </div><!-- /.col-lg-6 -->
+        </div><!-- /.col-lg-12 -->
     </div><!-- /.row -->
     <?php } ?>
 
