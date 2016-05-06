@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo Uri::base(); ?>console/index">○○○コンソール</a>
+                <a class="navbar-brand" href="<?php echo Uri::base(); ?>console/index"><?php echo AppDefine::SERVICE_NAME; ?></a>
             </div><!-- /.navbar-header -->
 
             <!-- ユーザー設定メニュー -->
