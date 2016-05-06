@@ -60,9 +60,9 @@ class Model_Users extends \Model_Crud
         {
             return false;
         }
-        if (!ctype_alnum($name)) 
+        if (!preg_match("/^[-_a-zA-Z0-9]+$/", $name))    //アルファベット、数字、ハイフン、アンダーバー以外
         {
-            return false;          
+            return false;    
         }
         if(!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
@@ -72,13 +72,9 @@ class Model_Users extends \Model_Crud
         {
             return false;
         }
-        if (strlen($password) < 6)
+        if (strlen($password) < 6 || strlen($password) > 20)
         {
             return false;
-        }
-        if (!ctype_alnum($password)) 
-        {
-            return false;        
         }
         
         return true;

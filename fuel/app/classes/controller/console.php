@@ -157,7 +157,7 @@ class Controller_Console extends Controller_Template
 			$val->add('username', 'ユーザー名')
 				->add_rule('required')
 				->add_rule('min_length', 3)
-				->add_rule('valid_string', array('alpha', 'numeric'));
+				->add_rule('valid_string', array('alpha', 'numeric', 'dashes'));
 			$val->add('email', 'メールアドレス')
 				->add_rule('required')
 				->add_rule('valid_email');

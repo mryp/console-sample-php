@@ -69,12 +69,17 @@
                             <a href="<?php echo Uri::base(); ?>console/table"><i class="fa fa-table fa-fw"></i> 集計</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cog fa-fw"></i> 設定<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cog fa-fw"></i> 全般設定<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="<?php echo Uri::base(); ?>console/optionsite">サイト設定</a></li>
+                            </ul><!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> ユーザー設定<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li><a href="<?php echo Uri::base(); ?>console/optionuser">ユーザー一覧</a></li>
                                 <li><a href="<?php echo Uri::base(); ?>console/optionadduser">ユーザー追加</a></li>
                                 <li><a href="<?php echo Uri::base(); ?>console/optioncsvuser">ユーザー一括追加</a></li>
-                                <li><a href="<?php echo Uri::base(); ?>console/optiongen">全般設定</a></li>
                             </ul><!-- /.nav-second-level -->
                         </li>
                     </ul>
