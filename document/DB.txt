@@ -1,26 +1,19 @@
 DB作成：
 create database fuelsample default character set utf8;
 
-テーブル作成：
-create table `users` (
-    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-    `username` VARCHAR( 50 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
-    `password` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
-    `group` INT( 11 ) NOT NULL DEFAULT 1 ,
-    `email` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
-    `last_login` VARCHAR( 25 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
-    `login_hash` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
-    `profile_fields` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
-    `created_at` INT( 11 ) UNSIGNED NOT NULL ,
-    `updated_at` INT( 11 ) UNSIGNED NOT NULL ,
-    UNIQUE (
-        `username` ,
-        `email`
-    )
-);
+DBテーブル作成：
+php oil refine migrate
 
+
+//Simpleauth テーブル作成
+//---------------------------------------------------------------
+php oil refine migrate --packages=auth
 
 最初のユーザー登録：
 php oil console
 >> Auth::create_user('admin', 'パスワード', 'admin@poringsoft.net', 100);
+
+
+
+
 

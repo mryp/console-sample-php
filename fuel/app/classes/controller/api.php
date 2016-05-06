@@ -26,4 +26,14 @@ class Controller_Api extends Controller_Rest
         );
         return $this->response($data);        
     }
+    
+    public function post_ping()
+    {
+        $termid = Input::post("termid", '1');
+        $datetime = Input::post("datetime", '');
+        $unixtime = Input::post("unixtime", '');
+        $result = Model_Ping::addRecord($termid, $datetime, $unixtime);
+        
+        return $this->response($result); 
+    }
 }
