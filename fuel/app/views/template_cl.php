@@ -66,6 +66,9 @@
                             <a href="<?php echo Uri::base(); ?>console/index"><i class="fa fa-dashboard fa-fw"></i> ダッシュボード</a>
                         </li>
                         <li>
+                            <a href="<?php echo Uri::base(); ?>console/restapi"><i class="fa fa-asterisk fa-fw"></i> REST API</a>
+                        </li>
+                        <li>
                             <a href="<?php echo Uri::base(); ?>console/table"><i class="fa fa-table fa-fw"></i> 集計</a>
                         </li>
                         <li>

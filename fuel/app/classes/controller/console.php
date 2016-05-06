@@ -267,4 +267,14 @@ class Controller_Console extends Controller_Template
 			$this->template->content->set_safe('error_message', $data['error_message']);
 		}
 	}
+	
+	/**
+	 * REST API
+	 */
+	public function action_restapi()
+	{
+		$this->template->content = View::forge('console/restapi');
+		$this->template->set('title', 'REST API テスト');
+		$this->template->content->set('title', 'REST API テスト');
+	}
 }
