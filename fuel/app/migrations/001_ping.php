@@ -14,13 +14,11 @@ class Ping
             'updated_at' => array('type' => 'datetime'),
         ), array('id'), false, 'InnoDB');
         
-//        \DBUtil::create_index('ping', 'termid');
+        \DBUtil::create_index('ping', 'param_datetime');
     }
 
     function down()
     {
-//        \DBUtil::drop_index('table', 'termid');
-
         \DBUtil::drop_table('ping');
     }
 }
