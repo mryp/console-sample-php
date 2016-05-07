@@ -277,4 +277,14 @@ class Controller_Console extends Controller_Template
 		$this->template->set('title', 'REST API テスト');
 		$this->template->content->set('title', 'REST API テスト');
 	}
+	
+	/**
+	 * PINGテーブル
+	 */
+	public function action_ping()
+	{
+		$this->template->content = View::forge('console/ping');
+		$this->template->set('title', 'PINGテーブル');
+		$this->template->content->set('title', 'PINGテーブル');
+	}
 }

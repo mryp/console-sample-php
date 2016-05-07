@@ -14,6 +14,10 @@
     <!-- MetisMenu CSS -->
     <link type="text/css" rel="stylesheet" href="<?php echo Uri::base(); ?>assets/bower_components/metisMenu/dist/metisMenu.min.css" />
 
+    <!-- DataTables CSS -->
+    <link type="text/css" rel="stylesheet" href="<?php echo Uri::base(); ?>assets/bower_components/datatables/media/css/dataTables.bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo Uri::base(); ?>assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+
     <!-- Custom CSS -->
     <?php echo Asset::css("sb-admin-2.css"); ?>
 
@@ -69,6 +73,9 @@
                             <a href="<?php echo Uri::base(); ?>console/restapi"><i class="fa fa-asterisk fa-fw"></i> REST API</a>
                         </li>
                         <li>
+                            <a href="<?php echo Uri::base(); ?>console/ping"><i class="fa fa-table fa-fw"></i> PINGテーブル</a>
+                        </li>
+                        <li>
                             <a href="<?php echo Uri::base(); ?>console/table"><i class="fa fa-table fa-fw"></i> 集計</a>
                         </li>
                         <li>
@@ -106,6 +113,10 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script type="text/javascript" src="<?php echo Uri::base(); ?>assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script type="text/javascript" src="<?php echo Uri::base(); ?>assets/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?php echo Uri::base(); ?>assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <?php echo Asset::js("sb-admin-2.js"); ?>
