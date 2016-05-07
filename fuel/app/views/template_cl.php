@@ -73,10 +73,13 @@
                             <a href="<?php echo Uri::base(); ?>console/restapi"><i class="fa fa-asterisk fa-fw"></i> REST API</a>
                         </li>
                         <li>
-                            <a href="<?php echo Uri::base(); ?>console/ping"><i class="fa fa-table fa-fw"></i> PINGテーブル</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> PINGテーブル<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="<?php echo Uri::base(); ?>console/pinglatest"> 最新データ</a></li>
+                            </ul><!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="<?php echo Uri::base(); ?>console/table"><i class="fa fa-table fa-fw"></i> 集計</a>
+                            <a href="<?php echo Uri::base(); ?>console/table"><i class="fa fa-table fa-fw"></i> テーブルサンプル</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-cog fa-fw"></i> 全般設定<span class="fa arrow"></span></a>

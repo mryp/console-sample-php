@@ -279,11 +279,13 @@ class Controller_Console extends Controller_Template
 	}
 	
 	/**
-	 * PINGテーブル
+	 * PING最新データ
 	 */
-	public function action_ping()
+	public function action_pinglatest()
 	{
-		$this->template->content = View::forge('console/ping');
+		$data = array();
+		$data['limit'] = Input::post('limit', '10');
+		$this->template->content = View::forge('console/pinglatest', $data);
 		$this->template->set('title', 'PINGテーブル');
 		$this->template->content->set('title', 'PINGテーブル');
 	}
