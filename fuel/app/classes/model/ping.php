@@ -27,4 +27,35 @@ class Model_Ping extends \Model_Crud
         
         return $data->save();
     }
+    
+    public static function getRangeData($termid, $targetdate, $usecollumn)
+    {
+        $dataList = null;
+        if (strtotime($targetdate) != 0)
+        {
+            $findParam = array(
+                'where' => array()
+            );
+            
+            if ($termid != 0)
+            {
+                array_push($findParam['where'], array('termid' => $termid));
+            }
+            if ($usecollumn == 'param_unixtime')
+            {
+                $start = strtotime($targetdate . ' 0:00:00');
+                $end = strtotime($targetdate . ' 23:59:59');
+                array_push($findParam['where'], array('param_unixtime', '>=', $start));   
+                array_push($findParam['where'], array('param_unixtime', '<=', $end));
+            }
+            else
+            {
+                array_push($findParam['where'], array('param_datetime', 'between', array($targetdate . ' 0:00:00', $targetdate . ' 23:59:59')));   
+            }
+            $dataList = Model_Ping::find($findParam);   
+        }
+        
+        return $dataList;
+    }
+    
 }

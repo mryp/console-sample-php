@@ -289,4 +289,18 @@ class Controller_Console extends Controller_Template
 		$this->template->set('title', 'PINGテーブル');
 		$this->template->content->set('title', 'PINGテーブル');
 	}
+	
+	/**
+	 * PING日付指定
+	 */
+	public function action_pingdate()
+	{
+		$data = array();
+		$data['termid'] = Input::post('termid', '0');
+		$data['targetdate'] = Input::post('targetdate', date("Y-m-d"));
+		$data['usecollumn'] = Input::post('usecollumn', 'param_datetime');
+		$this->template->content = View::forge('console/pingdate', $data);
+		$this->template->set('title', 'PING日付範囲データ');
+		$this->template->content->set('title', 'PING日付範囲データ');
+	}
 }
