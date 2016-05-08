@@ -11,11 +11,10 @@ class Model_Ping extends \Model_Crud
         'param_datetime',
         'param_unixtime',
         'created_at',
-        'updated_at',
     );
     protected static $_mysql_timestamp = true;
     protected static $_created_at = 'created_at';
-    protected static $_updated_at = 'updated_at';
+    //protected static $_updated_at = '';   //使用しない
     
     /**
      * 1件分のデータを追加する
@@ -61,7 +60,6 @@ class Model_Ping extends \Model_Crud
                     'param_datetime' => date('Y/m/d H:i:s', $time),
                     'param_unixtime' => $time,
                     'created_at' => $now,
-                    'updated_at' => $now ,
                 ))->execute();
             }
 

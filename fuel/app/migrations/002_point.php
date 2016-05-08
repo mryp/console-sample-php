@@ -1,23 +1,24 @@
 <?php
 namespace Fuel\Migrations;
 
-class Ping
+class Point
 {
     function up()
     {
-        \DBUtil::create_table('ping', array(
+        \DBUtil::create_table('point', array(
             'id' => array('type' => 'int', 'constraint' => 11, 'auto_increment' => true, 'unsigned' => true),
             'termid' => array('type' => 'varchar', 'constraint' => 16),
-            'param_datetime' => array('type' => 'datetime'),
-            'param_unixtime' => array('type' => 'int', 'constraint' => 11),
+            'type' => array('type' => 'int', 'constraint' => 11),
+            'value' => array('type' => 'int', 'constraint' => 11),
             'created_at' => array('type' => 'datetime'),
         ), array('id'), false, 'InnoDB');
         
-        \DBUtil::create_index('ping', 'param_datetime');
+        \DBUtil::create_index('point', 'type');
+        \DBUtil::create_index('point', 'value');
     }
 
     function down()
     {
-        \DBUtil::drop_table('ping');
+        \DBUtil::drop_table('point');
     }
 }
