@@ -21,7 +21,7 @@
                                 echo Form::input('param1', '', array('class' => 'form-control'));
                                 echo '</div>';
                                                                 
-                                echo Form::submit('submit', "送信", array('class' => 'btn btn-default'));
+                                echo Form::submit('submit', "送信", array('class' => 'btn btn-primary'));
                                 echo Form::close();
                             ?>
                         </div><!-- /.col-lg-12 (nested) -->
@@ -53,7 +53,7 @@
                                 echo Form::input('unixtime', time(), array('class' => 'form-control'));
                                 echo '</div>';
                                                                 
-                                echo Form::submit('submit', "送信", array('class' => 'btn btn-default'));
+                                echo Form::submit('submit', "送信", array('class' => 'btn btn-primary'));
                                 echo Form::close();
                             ?>
                         </div><!-- /.col-lg-12 (nested) -->
@@ -77,7 +77,7 @@
                                 echo Form::input('count', '100', array('class' => 'form-control'));
                                 echo '</div>';
                                 
-                                echo Form::submit('submit', "送信", array('class' => 'btn btn-default'));
+                                echo Form::submit('submit', "送信", array('class' => 'btn btn-primary'));
                                 echo Form::close();
                             ?>
                         </div><!-- /.col-lg-12 (nested) -->

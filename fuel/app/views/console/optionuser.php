@@ -1,3 +1,14 @@
+<script type="text/javascript"> 
+<!--
+function deleteConfirm(){
+    if(window.confirm('削除してもよろしいですか？')){
+        return true;
+    } else{
+        return false;
+    }
+}
+// -->
+</script>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -14,7 +25,7 @@
                 </div><!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <form role="form" method="post">
+                        <form role="form" method="post" onSubmit="return deleteConfirm();">
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -45,7 +56,7 @@
                                         }
                                         else
                                         {
-                                            echo '<td><button type="submit" name="delete['.$user['id'].']" class="btn btn-default">削除</button></td>';
+                                            echo '<td><button type="submit" name="delete['.$user['id'].']" class="btn btn-danger btn-xs">削除</button></td>';
                                         }
                                         echo '</tr>';
                                     }

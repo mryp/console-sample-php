@@ -13,7 +13,7 @@ class Model_Users extends \Model_Crud
     public static function createUserFromCsvFile($csvFilePath)
     {
         $successCount = 0;
-        $fp = self::fopenConvertUtf8($csvFilePath);
+        $fp = AppUtil::fopenConvertUtf8($csvFilePath);
         while (($line = fgetcsv($fp, 1000, ",")) !== false) 
         {
             if (count($line) < 4)
@@ -78,18 +78,5 @@ class Model_Users extends \Model_Crud
         }
         
         return true;
-    }
-    
-    /**
-     * SJISファイルをUTF8に変換してファイルをオープンする
-     */
-    private static function fopenConvertUtf8($csvFilePath)
-    {
-        $buffer = mb_convert_encoding(file_get_contents($csvFilePath), "UTF-8", "sjis-win");
-        $fp = tmpfile();
-        fwrite($fp, $buffer);
-        rewind($fp);
-        
-        return $fp;
     }
 }

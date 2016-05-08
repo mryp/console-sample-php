@@ -43,7 +43,7 @@
                                 echo 'すでに登録済みのユーザーが存在する場合はエラーとして扱い、更新処理等は行いません。<br />';
                                 echo '</p>';
                                 
-                                echo Form::submit('submit', "登録する", array('class' => 'btn btn-default'));
+                                echo Form::submit('submit', "登録する", array('class' => 'btn btn-primary'));
                                 echo Form::close();
                             ?>
                         </div><!-- /.col-lg-12 (nested) -->

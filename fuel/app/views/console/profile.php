@@ -28,7 +28,6 @@
                                     echo '</div>';   
                                 }
                                 
-                                
                                 echo Form::open(array('role' => 'form'));
                                 echo '<div class="form-group">';
                                 echo Form::label('ユーザー名');
@@ -45,7 +44,7 @@
                                 echo '<p class="form-control-static">'.$groupname.'</p>';
                                 echo '</div>';
                                                                 
-                                echo Form::submit('passwordcnf', "更新する", array('class' => 'btn btn-default'));
+                                echo Form::submit('passwordcnf', "更新する", array('class' => 'btn btn-primary'));
                                 echo Form::close();
                             ?>
                         </div><!-- /.col-lg-6 (nested) -->

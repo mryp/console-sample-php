@@ -60,7 +60,7 @@
                                 echo Form::password('passwordcnf', "", array('class' => 'form-control', 'placeholder' => 'パスワード'));
                                 echo '</div>';
                                 
-                                echo Form::submit('submit', "追加する", array('class' => 'btn btn-default'));
+                                echo Form::submit('submit', "追加する", array('class' => 'btn btn-primary'));
                                 echo Form::close();
                             ?>
                         </div><!-- /.col-lg-12 (nested) -->
