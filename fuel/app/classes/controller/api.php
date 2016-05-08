@@ -32,7 +32,7 @@ class Controller_Api extends Controller_Rest
      */
     public function post_ping()
     {
-        $termid = Input::post("termid", '1');
+        $termid = Input::post("termid", 1);
         $datetime = Input::post("datetime", '');
         $unixtime = Input::post("unixtime", '');
         $result = Model_Ping::addRecord($termid, $datetime, $unixtime);

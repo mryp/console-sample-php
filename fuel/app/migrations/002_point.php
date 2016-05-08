@@ -7,7 +7,7 @@ class Point
     {
         \DBUtil::create_table('point', array(
             'id' => array('type' => 'int', 'constraint' => 11, 'auto_increment' => true, 'unsigned' => true),
-            'termid' => array('type' => 'varchar', 'constraint' => 16),
+            'termid' => array('type' => 'int', 'constraint' => 11),
             'type' => array('type' => 'int', 'constraint' => 11),
             'value' => array('type' => 'int', 'constraint' => 11),
             'created_at' => array('type' => 'datetime'),

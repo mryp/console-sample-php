@@ -38,7 +38,7 @@ class Model_Ping extends \Model_Crud
         set_time_limit(600);
         $addCount = 0;
         $now = date('Y/m/d H:i:s');
-        $termList = array('1', '2', '3', '4');
+        $termList = array(1, 2, 3, 4);
         try
         {
             DB::start_transaction();
