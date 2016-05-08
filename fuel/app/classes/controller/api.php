@@ -50,4 +50,18 @@ class Controller_Api extends Controller_Rest
         
         return $this->response($result); 
     }
+    
+    /**
+     * ポイントデータ一件追加
+     */
+    public function post_point()
+    {
+        $termid = Input::post("termid", 1);
+        $type = Input::post("type", 1);
+        $value = Input::post("value", 1);
+        $created_at = Input::post("created_at", '');
+        $result = Model_Point::addRecord($termid, $type, $value, $created_at);
+        
+        return $this->response($result); 
+    }
 }

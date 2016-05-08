@@ -18,6 +18,9 @@
     <link type="text/css" rel="stylesheet" href="<?php echo Uri::base(); ?>assets/bower_components/datatables/media/css/dataTables.bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="<?php echo Uri::base(); ?>assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
 
+    <!-- Morris Charts CSS -->
+    <link type="text/css" rel="stylesheet" href="<?php echo Uri::base(); ?>assets/bower_components/morrisjs/morris.css">
+        
     <!-- Custom CSS -->
     <?php echo Asset::css("sb-admin-2.css"); ?>
 
@@ -80,6 +83,12 @@
                             </ul><!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> POINTテーブル<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="<?php echo Uri::base(); ?>console/pointchart"> チャート</a></li>
+                            </ul><!-- /.nav-second-level -->
+                        </li>
+                        <li>
                             <a href="<?php echo Uri::base(); ?>console/table"><i class="fa fa-table fa-fw"></i> テーブルサンプル</a>
                         </li>
                         <li>
@@ -122,6 +131,20 @@
     <script type="text/javascript" src="<?php echo Uri::base(); ?>assets/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?php echo Uri::base(); ?>assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
+    <!-- Morris Charts JavaScript -->
+    <script type="text/javascript" src="<?php echo Uri::base(); ?>assets/bower_components/raphael/raphael-min.js"></script>
+    <script type="text/javascript" src="<?php echo Uri::base(); ?>assets/bower_components/morrisjs/morris.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        <?php
+         if (isset($chart_line_data))
+         {
+             echo "Morris.Line(" . $chart_line_data . ");";
+         }
+        ?>
+    });
+    </script>
+    
     <!-- Custom Theme JavaScript -->
     <?php echo Asset::js("sb-admin-2.js"); ?>
 

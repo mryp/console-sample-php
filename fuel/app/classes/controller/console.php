@@ -303,4 +303,20 @@ class Controller_Console extends Controller_Template
 		$this->template->set('title', 'PING日付範囲データ');
 		$this->template->content->set('title', 'PING日付範囲データ');
 	}
+	
+	/**
+	 * ポイントチャート
+	 */
+	public function action_pointchart()
+	{
+		$data = array();
+		$chartLineData = Model_Point::getCountGroupDate();
+		$chartLineDataJson = json_encode($chartLineData);
+		
+		$this->template->content = View::forge('console/pointchart', $data);
+		$this->template->set('title', 'ポイントチャート');
+		$this->template->set_safe('chart_line_data', $chartLineDataJson);
+		$this->template->content->set('title', 'ポイントチャート');
+		$this->template->content->set('chart_element', $chartLineData['element']);
+	}
 }
